@@ -26,10 +26,10 @@ public class Enemy extends Character {
 
 	}
 
-	public int takeDamage(int hp, boolean won) {
+	public int takeDamage(int hp, boolean won, int dmg) {
 		if (won) {
-			hp -= 20;
-			System.out.println("Enemy takes 20 dmg");
+			hp -= dmg;
+			System.out.println("Enemy takes " + dmg + " dmg");
 		} else {
 			System.out.println("Enemy takes no damage");
 		}
@@ -38,10 +38,10 @@ public class Enemy extends Character {
 
 	public boolean isAlive() {
 		if (hp <= 0) {
-			System.out.println("You defeated the enemy"); 
+			System.out.println("You defeated the enemy");
 			return false;
-		} else 
+		} else
 			return true;
-			
+
 	}
 }

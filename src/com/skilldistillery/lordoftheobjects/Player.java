@@ -11,9 +11,6 @@ public class Player extends Character {
 		super(hp);
 	}
 
-//	public void chooseAction() {
-//		move, attack
-//	}
 
 	public char chooseAtk(Scanner scanner) {
 		System.out.println("Choose an attack: ");
@@ -25,10 +22,10 @@ public class Player extends Character {
 		return input;
 	}
 
-	public int takeDamage(int hp, boolean won) {
+	public int takeDamage(int hp, boolean won, int dmg) {
 		if (!won) {
-			hp -= 20;
-			System.out.println("You take 20 dmg");
+			hp -= dmg;
+			System.out.println("You take " + dmg + " dmg");
 
 		} else {
 			System.out.println("You take no damage");
@@ -43,12 +40,5 @@ public class Player extends Character {
 		}
 	}
 
-	public void move() {
-//		move the player backwards and forwards through rooms array (Level)
-//		if the next spot in the array is occupied:
-//				
-//		else:
-//			update array with new player position
-	}
 
 }
