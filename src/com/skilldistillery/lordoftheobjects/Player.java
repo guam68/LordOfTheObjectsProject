@@ -13,10 +13,10 @@ public class Player extends Character {
 
 
 	public char chooseAtk(Scanner scanner) {
-		System.out.println("Choose an attack: ");
-		System.out.println("a. rock");
-		System.out.println("b. paper");
-		System.out.println("c. scissors");
+		System.out.println("\nChoose an attack: ");
+		System.out.println("a. Rock");
+		System.out.println("b. Paper");
+		System.out.println("c. Scissors");
 		char input = scanner.next().charAt(0);
 
 		return input;

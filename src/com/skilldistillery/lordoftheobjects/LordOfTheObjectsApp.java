@@ -8,6 +8,7 @@ public class LordOfTheObjectsApp {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
+		
 		Player player = new Player(100);
 		Enemy enemy1 = new Enemy(20);
 		Enemy enemy2 = new Enemy(40);
@@ -66,7 +67,15 @@ public class LordOfTheObjectsApp {
 		if (choice == '1') {
 			playGame(scanner, tourney);
 		} else if (choice == '2') {
-			System.out.println("");
+			System.out.println("You've trained your entire life and now the big event is here");
+			System.out.println("Nothing has tested your physical endurance, mental standing, or /n your personal grit quite like training for the Rock-Paper-Scissors World Championship");
+			System.out.println("The tournament starts soon and you set your eyes on overtaking\nthe current world Rock-Paper-Scissors Champion, Sean \"WickedFingers\" Sears.");
+			System.out.println();
+			System.out.println("The game is simple, choose your attack, and make your way through \nthe tournament participants without being overpowered by their deadly Rock-Paper-Scissor choosing. \n Take note of where you stand in the bracket and whom your opponent is, make it out of the initial bracket to take on the defending Champion");
+			System.out.println();
+			System.out.println("Here is the Bracket");
+			printBracketStarting();
+			System.out.println();
 			startMenu(scanner, tourney);
 		} else {
 			System.exit(0);
@@ -89,6 +98,8 @@ public class LordOfTheObjectsApp {
 	}
 
 	public static void playGame(Scanner scanner, Tourney tourney) {
+		
+		
 		boolean eneAlive = true;
 
 		do {
@@ -99,7 +110,15 @@ public class LordOfTheObjectsApp {
 			eneAlive = tourney.getEnemy().isAlive();
 			tourney.getPlayer().printHp();
 		} while (eneAlive);
+	
 		tourney.increaseCnt();
+		if (tourney.getCounter() == 0) {
+			printBracketStarting();
+		} else if (tourney.getCounter() == 1) {
+			printBracket2();
+		} else if (tourney.getCounter() == 2) {
+			printFinals();
+		}
 		if (tourney.getCounter() > 2) {
 			youWin();
 		}
@@ -107,11 +126,56 @@ public class LordOfTheObjectsApp {
 	}
 
 	public static void youWin() {
-		System.out.println("You Win!");
+		System.out.println("You Win! YOU ARE THE USARPS 2019 WORLD CHAMPION! Now go find a better hobby.");
+		System.out.println("************************************************************");
+		System.out.println("************************************************************");
 		System.out.println("\t    '._==_==_=_.'\n" + "            .-\\:      /-.\n" + "           | (|:.     |) |\n"
 				+ "            '-|:.     |-'\n" + "              \\::.    /\n" + "               '::. .'\n"
 				+ "                 ) (\n" + "               _.' '._\n" + "              `\"\"\"\"\"\"\"`");
+		System.out.println("************************************************************");
+		System.out.println("************************************************************");
 		System.exit(0);
 	}
+	
+	public static void printBracketStarting () {
+		
+		System.out.println("                                                         Sean \"WICKEDFINGERS\" Sears                                                        ");
+		System.out.println("                                                                     |                                                                      ");
+		System.out.println("                               ______________________________________|___________________________________________                            ");
+		System.out.println("                              |                                                                                  |                             ");
+		System.out.println("           ___________________|_______________________                                      _____________________|________________________       ");
+		System.out.println("    ______|______                             ________|______                       _______|________                              ________|________ ");
+		System.out.println("   |             |                           |               |                     |                |                            |                 |  ");
+		System.out.println("  You    VS Sarah \"Bulldog\"    Joe \"Paperbones\" VS   \"Badboy\" Bautista   Brock \"Rock\" VS Skeeter the \"Cheater\"         Sally \"Scissors\"  VS   Just Mike ");
+		System.out.println();
+		
 
-}
+	}
+
+	public static void printBracket2() {
+		
+			
+			System.out.println("                                                         Sean \"WICKEDFINGERS\" Sears                                                        ");
+			System.out.println("                                                                     |                                                                      ");
+			System.out.println("                               ______________________________________|___________________________________________                            ");
+			System.out.println("                              |                                                                                  |                             ");
+			System.out.println("           ___________________|_______________________                                      _____________________|______________________       ");
+			System.out.println("          |                                           |                                    |                                            |  ");
+			System.out.println("         You                                  Joe \"Paperbones\"                    Skeeter the \"Cheater\"                        Sally \"Scissors\" ");
+			System.out.println("                         		                                                                  														");
+			System.out.println();
+		
+		
+		
+	}
+	
+	public static void printFinals() {
+		System.out.println("***********************************");
+		System.out.println("***********************************");
+		System.out.println("YOU VS SEAN \"WICKEDFINGERS\" SEARS");
+		System.out.println("***********************************");
+		System.out.println("***********************************");
+		
+	}
+
+} //End Program

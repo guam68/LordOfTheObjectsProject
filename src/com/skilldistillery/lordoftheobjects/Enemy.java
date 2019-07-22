@@ -14,13 +14,13 @@ public class Enemy extends Character {
 //		randomly generate attack
 		double rand = Math.random();
 		if (rand < 0.33) {
-			System.out.println("a");
+			System.out.println("Opponent: A\n");
 			return 'a';
 		} else if (rand < 0.66) {
-			System.out.println("b");
+			System.out.println("Opponent: B\n");
 			return 'b';
 		} else {
-			System.out.println("c");
+			System.out.println("Opponent: C\n");
 			return 'c';
 		}
 

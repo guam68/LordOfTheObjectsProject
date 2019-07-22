@@ -24,10 +24,6 @@ public class Character {
 		this.hp = hp;
 	}
 
-	public void setAtkType(char atkType) {
-		
-	}
-	
 	public void printHp() {
 		System.out.println("HP: " + hp);
 	}
